@@ -29,11 +29,14 @@ end
 print_header = true
 RubyProf.measure_mode = RubyProf::WALL_TIME
 (files_to_compile + other_files_to_compile).each do |file|
+  output_file = File.basename(file,'.scss')
   css = ""
+  if File.exist?(output_file) && (File.mtime(output_file) > File.mtime(file))
+    next
+  end
   result = RubyProf.profile {
     css = Sass::Engine.for_file(file, {style: :compact,load_paths: [Bootstrap.stylesheets_path, '.']}).render
   }
-  output_file = File.basename(file,'.scss')
   if output_file != file
     File.open(output_file,'w') {|f| f.write css }
   end

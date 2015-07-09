@@ -1,0 +1,8 @@
+@import 'bootstrap';
+#something {
+  @extend .btn-group;
+  a {
+    @extend .btn, .btn-default;
+    display: inline-block;
+  }
+}
