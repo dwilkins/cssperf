@@ -1,0 +1,5 @@
+@import 'bootstrap';
+#something {
+  @extend .btn;
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+}

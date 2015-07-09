@@ -1,0 +1,10 @@
+@import 'bootstrap';
+#something,#something1,#something2,#something3,#something4,#something5 {
+  @extend .panel;
+  .my-panel-heading {
+    @extend .panel-heading;
+  }
+  .my-panel-body {
+    @extend .panel-body;
+  }
+}

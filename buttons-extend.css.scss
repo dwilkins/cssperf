@@ -1,0 +1,4 @@
+@import 'bootstrap';
+#something {
+  @extend .btn, .btn-default;
+}
